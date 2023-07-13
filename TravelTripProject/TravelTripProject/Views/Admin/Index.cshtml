@@ -1,0 +1,38 @@
+﻿@using TravelTripProject.Models.classes
+@model List<Blog>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<div>
+    <header style="background-color: blanchedalmond; border-block: 2px solid darkkhaki ">
+        <h3 style="font-style:normal;color:olive;text-align:center">Blog Listesi</h3>
+    </header>
+</div>
+
+
+
+
+<table class="table table-bordered ">
+    <tr>
+        <th>ID</th>
+        <th>BAŞLIK</th>
+        <th>TARİH</th>
+    </tr>
+    @foreach (var b in Model)
+    {
+        <tr>
+            <td>@b.ID</td>
+            <td>@b.Baslik</td>
+            <td>@b.Tarih.ToString("dd-MM-yyyy")</td>
+            <td><a href="/Admin/BlogSil/@b.ID" class="btn btn-outline-danger">SİL</a></td>
+            <td><a href="/Admin/BlogGuncelle/@b.ID  " class="btn btn-outline-success">GÜNCELLE</a></td>
+            <td><a href="#" class="btn btn-outline-primary">DETAYLAR</a></td>
+        </tr>
+    }
+
+</table>
+
+<a href="/Admin/YeniBlog/" class="btn btn-outline-secondary">EKLE</a>

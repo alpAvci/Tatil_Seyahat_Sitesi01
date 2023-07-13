@@ -1,0 +1,25 @@
+﻿
+@using TravelTripProject.Models.classes
+@model  List<Blog>
+
+
+
+@foreach (var x in Model)
+{
+    <div class="box1-left">
+        <div class="bot-img">
+            <img src="@x.BlogFoto" alt="" />
+        </div>
+        <div class="bot-desc1">
+            <p>@x.Aciklama.Substring(0, 75)... </p>
+            <br />
+
+            <p><a href="/Blog/BlogDetay/@x.ID"><span class="read">Devamını Oku >></span></a></p>
+            <br />
+        </div>
+
+        <div class="clear"></div>
+    </div>
+
+}
+

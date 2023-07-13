@@ -1,0 +1,46 @@
+﻿
+@model  TravelTripProject.Models.classes.Blog
+@{
+    ViewBag.Title = "YeniBlog";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+   
+    <script type="text/javascript">
+        $(function () {
+            $('#datePicker').datePicker({
+                changeMonth: true,
+                changeYear: true,
+                format: "dd/mm/yyyy",
+                language: "tr"
+            });
+        });
+    </script>
+
+    <form class="form-group col col-sm-6" method="post">
+        <br />
+        <br />
+        @Html.LabelFor(x => x.Baslik, "BAŞLIK")
+        @Html.TextBoxFor(x => x.Baslik, new { @class = "form-control" })
+
+        <br />
+
+        @Html.LabelFor(x => x.Tarih, "TARİH")
+        @Html.TextBoxFor(x=>x.Tarih,new {@class="form-control"})
+
+        <br />
+        @Html.LabelFor(x => x.BlogFoto, "BLOG FOTO")
+        @Html.TextBoxFor(x => x.BlogFoto, new { @class = "form-control" })
+        <br />
+
+
+        <br />
+        @Html.LabelFor(x => x.Aciklama, "AÇIKLAMA")
+        @Html.TextAreaFor(x => x.Aciklama, new { @class = "form-control" })
+        
+        <br />
+
+        <button class="btn btn-outline-primary">EKLE</button>
+    </form>
+

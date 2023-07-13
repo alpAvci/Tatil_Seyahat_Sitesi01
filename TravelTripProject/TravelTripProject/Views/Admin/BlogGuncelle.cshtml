@@ -1,0 +1,40 @@
+﻿@model  TravelTripProject.Models.classes.Blog
+@{
+    ViewBag.Title = "BlogGuncelle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+<form class="form-group col col-sm-6" method="post">
+
+
+    @Html.LabelFor(x => x.ID, "ID")
+    @Html.TextBoxFor(x => x.ID, new { @class = "form-control", @readonly = "readonly" })
+
+    <br />
+    <br />
+    @Html.LabelFor(x => x.Baslik, "BAŞLIK")
+    @Html.TextBoxFor(x => x.Baslik, new { @class = "form-control" })
+
+    <br />
+
+    @Html.LabelFor(x => x.Tarih, "TARİH")
+    @Html.TextBoxFor(x => x.Tarih, "{0:dd-MM-yyyy}", new { @class = "form-control" })
+
+    <br />
+    @Html.LabelFor(x => x.BlogFoto, "BLOG FOTO")
+    @Html.TextBoxFor(x => x.BlogFoto, new { @class = "form-control" })
+    <br />
+
+
+    <br />
+    @Html.LabelFor(x => x.Aciklama, "AÇIKLAMA")
+    @Html.TextAreaFor(x => x.Aciklama,17,1, new { @class = "form-control" })
+
+    <br />
+
+    <button class="btn btn-outline-success">GÜNCELLE</button>
+</form>
+
+
